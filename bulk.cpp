@@ -87,7 +87,7 @@ BulkController::BulkController(ImpBulk *bulk, int commandsCount)
       _signShiftUp("{"), _signShiftDown("}")
 {}
 
-void BulkController::getString(std::string &str)
+void BulkController::addString(std::string &str)
 {
     if (str == _signShiftUp)
     {

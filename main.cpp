@@ -24,7 +24,7 @@ int main (int argc, char** argv)
         std::cin >> cmd;
 
         if (!cmd.empty())
-            ctrl.getString(cmd);
+            ctrl.addString(cmd);
 
     }
 
