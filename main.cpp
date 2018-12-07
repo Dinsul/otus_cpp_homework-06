@@ -28,6 +28,8 @@ int main (int argc, char** argv)
 
     }
 
+    delete blk;
+
 
     return 0;
 }
