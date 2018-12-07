@@ -4,7 +4,7 @@
 #include <fstream>
 
 //#include <spdlog/sinks/basic_file_sink.h>
-#include <exception>
+#include <stdexcept>
 
 void Bulk::logCommands()
 {
