@@ -2,19 +2,26 @@
 #include <fstream>
 #include <iostream>
 
-int main (int, char**)
+int main (int argc, char** argv)
 {
+    if (argc != 2)
+    {
+        std::cout << "usage: bulk N\n\tN - number of commands in bulk." << std::endl;
+
+        return 1;
+    }
+
+    int commandsCount = atoi(argv[1]);
+
     ImpBulk *blk = new Bulk();
 
-    BulkController ctrl(blk, 3);
+    BulkController ctrl(blk, commandsCount);
 
     std::string cmd;
-    std::ifstream input;
-    input.open("/dev/stdin", std::ios_base::in);
 
-    while (!input.eof())
+    while (!std::cin.eof())
     {
-        input >> cmd;
+        std::cin >> cmd;
 
         if (!cmd.empty())
             ctrl.getString(cmd);
