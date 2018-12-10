@@ -19,7 +19,7 @@ set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/doc")
 #    [WORKING_DIRECTORY dir]
 #    [COMMENT comment])
 
-#doxygen_add_docs(doc "${PROJECT_SOURCE_DIR}")
+doxygen_add_docs(doc "${PROJECT_SOURCE_DIR}")
 
 add_executable(${PROJECT_NAME} "${PROJECT_NAME}.h" "${PROJECT_NAME}.cpp" "main.cpp" ".travis.yml")
 
@@ -54,6 +54,4 @@ include (CPack)
 
 enable_testing()
 
-add_test(test_value test_${PROJECT_NAME})
-add_test(test_size  test_${PROJECT_NAME})
-add_test(test_op_eq test_${PROJECT_NAME})
+add_test(test_ test_${PROJECT_NAME})
