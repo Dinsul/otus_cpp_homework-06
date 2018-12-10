@@ -13,8 +13,7 @@ deploy:
   - provider: script
     skip_cleanup: true
     script:
-    - export PROJECT_NAME=bulk
-    - curl -T ${PROJECT_NAME}-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -udinsul:$BINTRAY_API_KEY "https://api.bintray.com/content/alpha/homeworks/package/$TRAVIS_BUILD_NUMBER/${PROJECT_NAME}-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+    - curl -T bulk-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -udinsul:$BINTRAY_API_KEY "https://api.bintray.com/content/alpha/homeworks/package/$TRAVIS_BUILD_NUMBER/bulk-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
   - provider: pages
     skip-cleanup: true
     github-token: $GITHUB_TOKEN
