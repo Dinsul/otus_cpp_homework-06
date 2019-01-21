@@ -22,13 +22,15 @@ int main (int argc, char** argv)
     while (!std::cin.eof())
     {
         std::cin >> cmd;
-
         if (!cmd.empty())
+        {
             ctrl.addString(cmd);
+        }
     }
 
-    delete blk;
+    std::cout << std::endl;
 
+    delete blk;
 
     return 0;
 }

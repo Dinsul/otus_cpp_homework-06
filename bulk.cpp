@@ -77,7 +77,7 @@ void BulkController::setSignShiftUp(const std::string &signShiftUp)
 
 BulkController::BulkController(ImpBulk *bulk, int commandsCount)
     : _bulker(bulk), _commandsCount(commandsCount), _currentNumber(0),
-      _signShiftUp("{"), _signShiftDown("}")
+      _signShiftUp("{"), _signShiftDown("}"), _stackSize(0)
 {}
 
 void BulkController::addString(std::string &str)
