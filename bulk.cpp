@@ -3,18 +3,11 @@
 #include <iostream>
 #include <fstream>
 
-//#include <spdlog/sinks/basic_file_sink.h>
 #include <stdexcept>
 
 void Bulk::logCommands()
 {
     auto fileName = std::string("bulk") + std::to_string(_beginTime) + ".log";
-//    auto logFile  = spdlog::basic_logger_mt("", fileName, true);
-
-//    for (auto cmd : _commands)
-//        logFile->info(cmd);
-
-    std::cout << fileName << std::endl;
 
     std::ofstream logFile;
 
@@ -49,7 +42,7 @@ ImpBulk *Bulk::clone()
 
 void ImpBulk::appendCmd(std::string newCmd)
 {
-    if (_commands.empty())
+    if (isEmpty())
     {
         _beginTime = time(NULL);
     }
@@ -138,7 +131,10 @@ void Bulker::appendCmd(std::string &newCmd)
 
 void Bulker::doWork()
 {
-    _bulk->printCommands();
-    _bulk->logCommands();
-    _bulk->clear();
+    if (!_bulk->isEmpty())
+    {
+        _bulk->printCommands();
+        _bulk->logCommands();
+        _bulk->clear();
+    }
 }

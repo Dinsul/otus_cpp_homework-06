@@ -44,6 +44,8 @@ public:
      * \return  указатель на новый экземпляр
      */
     virtual ImpBulk *clone(void)     = 0;
+
+    virtual size_t isEmpty(void){return _commands.empty();}
 };
 
 /*!

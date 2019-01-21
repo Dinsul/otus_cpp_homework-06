@@ -25,7 +25,6 @@ int main (int argc, char** argv)
 
         if (!cmd.empty())
             ctrl.addString(cmd);
-
     }
 
     delete blk;
