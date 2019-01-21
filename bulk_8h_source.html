@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">bulk
-   &#160;<span id="projectnumber">0.0.6</span>
+   &#160;<span id="projectnumber">0.0.7</span>
    </div>
   </td>
  </tr>
@@ -145,25 +145,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBulkController.html#a50b0603f6d61e54b56b078b576d7bc39">addString</a>(std::string &amp;str);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    std::string <a class="code" href="classBulkController.html#ad3fb171397f0d30f14481b81abfecc4e">signShiftUp</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::string <a class="code" href="classBulkController.html#acfb5f3375bfc34d9981f6ef40e59e2d3">signShiftDown</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBulkController.html#a8b48ab0830b7f6dbf8dc45930b023463">setSignShiftUp</a>(<span class="keyword">const</span> std::string &amp;signShiftUp);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBulkController.html#aefc1795537020fa6da264f20f5a7febc">setSignShiftDown</a>(<span class="keyword">const</span> std::string &amp;signShiftDown);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBulkController.html#a8da8e858d0a10f05fcb360b88e8eeafa">flush</a>(<span class="keywordtype">bool</span> printInternalBlock = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::string <a class="code" href="classBulkController.html#ad3fb171397f0d30f14481b81abfecc4e">signShiftUp</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    std::string <a class="code" href="classBulkController.html#acfb5f3375bfc34d9981f6ef40e59e2d3">signShiftDown</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBulkController.html#a8b48ab0830b7f6dbf8dc45930b023463">setSignShiftUp</a>(<span class="keyword">const</span> std::string &amp;signShiftUp);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBulkController.html#aefc1795537020fa6da264f20f5a7febc">setSignShiftDown</a>(<span class="keyword">const</span> std::string &amp;signShiftDown);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
 <div class="ttc" id="classImpBulk_html_a155981d7aa8c87dd5cdf8d87720d1f60"><div class="ttname"><a href="classImpBulk.html#a155981d7aa8c87dd5cdf8d87720d1f60">ImpBulk::appendCmd</a></div><div class="ttdeci">virtual void appendCmd(std::string newCmd)</div><div class="ttdoc">appendCmd Добаляет команду и сбрасывает таймер, если команда первая </div><div class="ttdef"><b>Definition:</b> bulk.cpp:43</div></div>
 <div class="ttc" id="classBulk_html_ac1a83c210093ce378c185ce42800a8f1"><div class="ttname"><a href="classBulk.html#ac1a83c210093ce378c185ce42800a8f1">Bulk::clone</a></div><div class="ttdeci">ImpBulk * clone(void) override</div><div class="ttdoc">clone Создаёт новый класс потомка </div><div class="ttdef"><b>Definition:</b> bulk.cpp:38</div></div>
-<div class="ttc" id="classBulker_html_a3662cade6f35ed14513c57474798ae2a"><div class="ttname"><a href="classBulker.html#a3662cade6f35ed14513c57474798ae2a">Bulker::Bulker</a></div><div class="ttdeci">Bulker(ImpBulk *bulk)</div><div class="ttdef"><b>Definition:</b> bulk.cpp:123</div></div>
+<div class="ttc" id="classBulker_html_a3662cade6f35ed14513c57474798ae2a"><div class="ttname"><a href="classBulker.html#a3662cade6f35ed14513c57474798ae2a">Bulker::Bulker</a></div><div class="ttdeci">Bulker(ImpBulk *bulk)</div><div class="ttdef"><b>Definition:</b> bulk.cpp:133</div></div>
 <div class="ttc" id="classImpBulk_html_a5abdabc5550c580d58e3bceb419161f8"><div class="ttname"><a href="classImpBulk.html#a5abdabc5550c580d58e3bceb419161f8">ImpBulk::~ImpBulk</a></div><div class="ttdeci">virtual ~ImpBulk()</div><div class="ttdef"><b>Definition:</b> bulk.h:19</div></div>
 <div class="ttc" id="classImpBulk_html_ab0a6564852f9916ce59dab51e9510a60"><div class="ttname"><a href="classImpBulk.html#ab0a6564852f9916ce59dab51e9510a60">ImpBulk::printCommands</a></div><div class="ttdeci">virtual void printCommands(void)=0</div><div class="ttdoc">printCommands Выводит бульку на экран </div></div>
-<div class="ttc" id="classBulker_html_ad14915f7d345f093b4ebf5351573a0d4"><div class="ttname"><a href="classBulker.html#ad14915f7d345f093b4ebf5351573a0d4">Bulker::doWork</a></div><div class="ttdeci">void doWork(void)</div><div class="ttdef"><b>Definition:</b> bulk.cpp:132</div></div>
+<div class="ttc" id="classBulker_html_ad14915f7d345f093b4ebf5351573a0d4"><div class="ttname"><a href="classBulker.html#ad14915f7d345f093b4ebf5351573a0d4">Bulker::doWork</a></div><div class="ttdeci">void doWork(void)</div><div class="ttdef"><b>Definition:</b> bulk.cpp:142</div></div>
 <div class="ttc" id="classBulker_html"><div class="ttname"><a href="classBulker.html">Bulker</a></div><div class="ttdoc">The Bulker класс для работы с бульками </div><div class="ttdef"><b>Definition:</b> bulk.h:67</div></div>
 <div class="ttc" id="classBulkController_html_aefc1795537020fa6da264f20f5a7febc"><div class="ttname"><a href="classBulkController.html#aefc1795537020fa6da264f20f5a7febc">BulkController::setSignShiftDown</a></div><div class="ttdeci">void setSignShiftDown(const std::string &amp;signShiftDown)</div><div class="ttdef"><b>Definition:</b> bulk.cpp:63</div></div>
+<div class="ttc" id="classBulkController_html_a8da8e858d0a10f05fcb360b88e8eeafa"><div class="ttname"><a href="classBulkController.html#a8da8e858d0a10f05fcb360b88e8eeafa">BulkController::flush</a></div><div class="ttdeci">void flush(bool printInternalBlock=false)</div><div class="ttdoc">flush выводит и очищает буффер </div><div class="ttdef"><b>Definition:</b> bulk.cpp:123</div></div>
 <div class="ttc" id="classBulk_html"><div class="ttname"><a href="classBulk.html">Bulk</a></div><div class="ttdoc">The Bulk class Реализация бульки </div><div class="ttdef"><b>Definition:</b> bulk.h:55</div></div>
 <div class="ttc" id="classBulkController_html_a8b48ab0830b7f6dbf8dc45930b023463"><div class="ttname"><a href="classBulkController.html#a8b48ab0830b7f6dbf8dc45930b023463">BulkController::setSignShiftUp</a></div><div class="ttdeci">void setSignShiftUp(const std::string &amp;signShiftUp)</div><div class="ttdef"><b>Definition:</b> bulk.cpp:73</div></div>
 <div class="ttc" id="classImpBulk_html_a6d21ae0bfa0e09f742ca0af435d634b5"><div class="ttname"><a href="classImpBulk.html#a6d21ae0bfa0e09f742ca0af435d634b5">ImpBulk::_beginTime</a></div><div class="ttdeci">time_t _beginTime</div><div class="ttdoc">Время записи первого элемента </div><div class="ttdef"><b>Definition:</b> bulk.h:16</div></div>
 <div class="ttc" id="classImpBulk_html_aaa5460a9e023f27a94f99f6a8c9d28d4"><div class="ttname"><a href="classImpBulk.html#aaa5460a9e023f27a94f99f6a8c9d28d4">ImpBulk::isEmpty</a></div><div class="ttdeci">virtual size_t isEmpty(void)</div><div class="ttdef"><b>Definition:</b> bulk.h:48</div></div>
-<div class="ttc" id="classBulker_html_a1c19a21ce743e8f926916a60272c1c07"><div class="ttname"><a href="classBulker.html#a1c19a21ce743e8f926916a60272c1c07">Bulker::appendCmd</a></div><div class="ttdeci">void appendCmd(std::string &amp;newCmd)</div><div class="ttdef"><b>Definition:</b> bulk.cpp:127</div></div>
+<div class="ttc" id="classBulker_html_a1c19a21ce743e8f926916a60272c1c07"><div class="ttname"><a href="classBulker.html#a1c19a21ce743e8f926916a60272c1c07">Bulker::appendCmd</a></div><div class="ttdeci">void appendCmd(std::string &amp;newCmd)</div><div class="ttdef"><b>Definition:</b> bulk.cpp:137</div></div>
 <div class="ttc" id="classBulkController_html_ad3fb171397f0d30f14481b81abfecc4e"><div class="ttname"><a href="classBulkController.html#ad3fb171397f0d30f14481b81abfecc4e">BulkController::signShiftUp</a></div><div class="ttdeci">std::string signShiftUp() const </div><div class="ttdef"><b>Definition:</b> bulk.cpp:68</div></div>
 <div class="ttc" id="classImpBulk_html_ad6f5dbc5083266101ed2d0661e97b004"><div class="ttname"><a href="classImpBulk.html#ad6f5dbc5083266101ed2d0661e97b004">ImpBulk::logCommands</a></div><div class="ttdeci">virtual void logCommands(void)=0</div><div class="ttdoc">logCommands Записывает бульку в файл </div></div>
 <div class="ttc" id="classBulkController_html_ad8d2afe5a1f8838a5e538cb3eae6f8b6"><div class="ttname"><a href="classBulkController.html#ad8d2afe5a1f8838a5e538cb3eae6f8b6">BulkController::BulkController</a></div><div class="ttdeci">BulkController(ImpBulk *bulk, int commandsCount)</div><div class="ttdoc">BulkController конструктор </div><div class="ttdef"><b>Definition:</b> bulk.cpp:78</div></div>
@@ -179,7 +182,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 21 2019 12:31:03 for bulk by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 21 2019 13:40:44 for bulk by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

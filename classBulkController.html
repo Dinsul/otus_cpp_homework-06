@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">bulk
-   &#160;<span id="projectnumber">0.0.6</span>
+   &#160;<span id="projectnumber">0.0.7</span>
    </div>
   </td>
  </tr>
@@ -103,6 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a50b0603f6d61e54b56b078b576d7bc39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBulkController.html#a50b0603f6d61e54b56b078b576d7bc39">addString</a> (std::string &amp;str)</td></tr>
 <tr class="memdesc:a50b0603f6d61e54b56b078b576d7bc39"><td class="mdescLeft">&#160;</td><td class="mdescRight">addString добавляет строку, если булька заполнена, выполняет соответствующие действия  <a href="#a50b0603f6d61e54b56b078b576d7bc39">More...</a><br/></td></tr>
 <tr class="separator:a50b0603f6d61e54b56b078b576d7bc39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da8e858d0a10f05fcb360b88e8eeafa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBulkController.html#a8da8e858d0a10f05fcb360b88e8eeafa">flush</a> (bool printInternalBlock=false)</td></tr>
+<tr class="memdesc:a8da8e858d0a10f05fcb360b88e8eeafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">flush выводит и очищает буффер  <a href="#a8da8e858d0a10f05fcb360b88e8eeafa">More...</a><br/></td></tr>
+<tr class="separator:a8da8e858d0a10f05fcb360b88e8eeafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3fb171397f0d30f14481b81abfecc4e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBulkController.html#ad3fb171397f0d30f14481b81abfecc4e">signShiftUp</a> () const </td></tr>
 <tr class="separator:ad3fb171397f0d30f14481b81abfecc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfb5f3375bfc34d9981f6ef40e59e2d3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBulkController.html#acfb5f3375bfc34d9981f6ef40e59e2d3">signShiftDown</a> () const </td></tr>
@@ -169,6 +172,30 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>новая строка </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8da8e858d0a10f05fcb360b88e8eeafa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BulkController::flush </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>printInternalBlock</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>flush выводит и очищает буффер </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">printInternalBlock</td><td>если true будет напечатан незавершённый блок не завершённые круппы команд вне блока выводятся всегда </td></tr>
   </table>
   </dd>
 </dl>
@@ -244,7 +271,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 21 2019 12:31:03 for bulk by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 21 2019 13:40:44 for bulk by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
