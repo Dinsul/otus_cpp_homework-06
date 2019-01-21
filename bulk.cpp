@@ -120,6 +120,16 @@ void BulkController::addString(std::string &str)
     }
 }
 
+void BulkController::flush(bool printInternalBlock)
+{
+    if (!printInternalBlock && _stackSize > 0)
+    {
+        return;
+    }
+
+    _bulker.doWork();
+}
+
 Bulker::Bulker(ImpBulk *bulk) : _bulk(bulk)
 {
 }

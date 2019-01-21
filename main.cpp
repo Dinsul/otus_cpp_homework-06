@@ -18,17 +18,18 @@ int main (int argc, char** argv)
     BulkController ctrl(blk, commandsCount);
 
     std::string cmd;
+    cmd.clear();
 
     while (!std::cin.eof())
     {
-        std::cin >> cmd;
         if (!cmd.empty())
         {
             ctrl.addString(cmd);
         }
+        std::cin >> cmd;
     }
 
-    std::cout << std::endl;
+    ctrl.flush();
 
     delete blk;
 

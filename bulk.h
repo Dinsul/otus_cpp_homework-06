@@ -101,6 +101,13 @@ public:
      */
     void addString(std::string &str);
 
+    /*!
+    * \brief flush выводит и очищает буффер
+     * \param printInternalBlock если true будет напечатан незавершённый блок
+     * не завершённые круппы команд вне блока выводятся всегда
+     */
+    void flush(bool printInternalBlock = false);
+
     std::string signShiftUp() const;
     std::string signShiftDown() const;
 
