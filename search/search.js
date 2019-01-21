@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   0: "_abcdilmpst~",
   1: "bi",
   2: "bmt",
-  3: "abcdlmps~",
+  3: "abcdilmps~",
   4: "_",
   5: "b"
 };

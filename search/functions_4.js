@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logcommands',['logCommands',['../classImpBulk.html#ad6f5dbc5083266101ed2d0661e97b004',1,'ImpBulk::logCommands()'],['../classBulk.html#a484802fac7e8873855042291aa7c96b5',1,'Bulk::logCommands()']]]
+  ['isempty',['isEmpty',['../classImpBulk.html#aaa5460a9e023f27a94f99f6a8c9d28d4',1,'ImpBulk']]]
 ];
