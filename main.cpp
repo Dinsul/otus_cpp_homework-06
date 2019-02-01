@@ -20,13 +20,9 @@ int main (int argc, char** argv)
     std::string cmd;
     cmd.clear();
 
-    while (!std::cin.eof())
+    for(std::string line; std::getline(std::cin, line);)
     {
-        if (!cmd.empty())
-        {
-            ctrl.addString(cmd);
-        }
-        std::cin >> cmd;
+        ctrl.addString(line);
     }
 
     ctrl.flush();
