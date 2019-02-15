@@ -7,10 +7,10 @@
 
 var indexSectionsWithContent =
 {
-  0: "_abcdfilmpst~",
-  1: "bi",
+  0: "_abcfilmopstw~",
+  1: "biw",
   2: "bmt",
-  3: "abcdfilmps~",
+  3: "abcfilmops~",
   4: "_",
   5: "b"
 };

@@ -1,3 +1,4 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classBulker.html" title="The Bulker класс для работы с бульками " alt="" coords="5,5,64,32"/>
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" href="$classImpBulk.html" title="ImpBulk интерфейс для бульков " alt="" coords="6,5,77,32"/>
+<area shape="rect" id="node2" href="$classBulk.html" title="Bulk класс реализации бульки " alt="" coords="125,5,173,32"/>
 </map>

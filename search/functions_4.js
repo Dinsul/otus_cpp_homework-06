@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['flush',['flush',['../classBulkController.html#a8da8e858d0a10f05fcb360b88e8eeafa',1,'BulkController']]]
+  ['isempty',['isEmpty',['../classImpBulk.html#acd7524f64437e1aef50c605333417b94',1,'ImpBulk']]]
 ];
