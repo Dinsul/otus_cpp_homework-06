@@ -7,19 +7,25 @@ else ()
 endif ()
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-find_package(Doxygen)
 
-set(DOXYGEN_HAVE_DOT YES)
-set(DOXYGEN_EXTRACT_ALL YES)
-set(DOXYGEN_PROJECT_LOGO "${CMAKE_SOURCE_DIR}/logo.svg")
-set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/doc")
+cmake_policy(PUSH)
+    cmake_policy(SET CMP0057 NEW)
+
+    find_package(Doxygen)
+
+    set(DOXYGEN_HAVE_DOT YES)
+    set(DOXYGEN_EXTRACT_ALL YES)
+    set(DOXYGEN_PROJECT_LOGO "${CMAKE_SOURCE_DIR}/logo.svg")
+    set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/doc")
+    set(DOXYGEN_OUTPUT_LANGUAGE "Russian")
+
+    doxygen_add_docs(doc "${PROJECT_SOURCE_DIR}")
+cmake_policy(POP)
 
 #doxygen_add_docs(targetName
 #    [filesOrDirs...]
 #    [WORKING_DIRECTORY dir]
 #    [COMMENT comment])
-
-doxygen_add_docs(doc "${PROJECT_SOURCE_DIR}")
 
 add_executable(${PROJECT_NAME} "${PROJECT_NAME}.h" "${PROJECT_NAME}.cpp" "main.cpp" ".travis.yml")
 

@@ -13,9 +13,10 @@ int main (int argc, char** argv)
 
     int commandsCount = atoi(argv[1]);
 
-    ImpBulk *blk = new Bulk();
+    Bulk   blk;
+    Worker wrk;
 
-    BulkController ctrl(blk, commandsCount);
+    BulkController ctrl(commandsCount, blk, wrk);
 
     std::string cmd;
     cmd.clear();
@@ -26,8 +27,6 @@ int main (int argc, char** argv)
     }
 
     ctrl.flush();
-
-    delete blk;
 
     return 0;
 }

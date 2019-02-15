@@ -5,7 +5,7 @@
 
 #include <stdexcept>
 
-void Bulk::logCommands()
+void Bulk::logCommands() const
 {
     auto fileName = std::string("bulk") + std::to_string(_beginTime) + ".log";
 
@@ -23,7 +23,7 @@ void Bulk::logCommands()
     logFile.close();
 }
 
-void Bulk::printCommands()
+void Bulk::printCommands() const
 {
     std::cout << "bulk: ";
 
@@ -35,12 +35,7 @@ void Bulk::printCommands()
     std::cout << std::endl;
 }
 
-ImpBulk *Bulk::clone()
-{
-    return new Bulk();
-}
-
-void ImpBulk::appendCmd(std::string newCmd)
+void ImpBulk::appendCmd(const std::string &newCmd)
 {
     if (isEmpty())
     {
@@ -75,18 +70,19 @@ void BulkController::setSignShiftUp(const std::string &signShiftUp)
     _signShiftUp = signShiftUp;
 }
 
-BulkController::BulkController(ImpBulk *bulk, int commandsCount)
-    : _bulker(bulk), _commandsCount(commandsCount), _currentNumber(0),
-      _signShiftUp("{"), _signShiftDown("}"), _stackSize(0)
+BulkController::BulkController(int commandsCount, ImpBulk &bulk, ImpWorker &worker)
+    : _bulk(bulk), _worker(worker),
+      _commandsCount(commandsCount), _currentNumber(0),
+      _stackSize(0), _signShiftUp("{"), _signShiftDown("}")
 {}
 
-void BulkController::addString(std::string &str)
+void BulkController::addString(const std::string &str)
 {
     if (str == _signShiftUp)
     {
         if (_stackSize == 0)
         {
-            _bulker.doWork();
+            _worker(_bulk);
         }
 
         ++_stackSize;
@@ -102,20 +98,20 @@ void BulkController::addString(std::string &str)
 
         if (_stackSize == 0)
         {
-            _bulker.doWork();
+            _worker(_bulk);
             _currentNumber = 0;
         }
     }
     else
     {
-        _bulker.appendCmd(str);
+        _bulk.appendCmd(str);
 
         ++_currentNumber;
 
         if (_stackSize == 0 && _currentNumber == _commandsCount)
         {
             _currentNumber = 0;
-            _bulker.doWork();
+            _worker(_bulk);
         }
     }
 }
@@ -127,24 +123,13 @@ void BulkController::flush(bool printInternalBlock)
         return;
     }
 
-    _bulker.doWork();
+    _worker(_bulk);
 }
 
-Bulker::Bulker(ImpBulk *bulk) : _bulk(bulk)
-{
-}
 
-void Bulker::appendCmd(std::string &newCmd)
+void Worker::operator ()(ImpBulk &bulk)
 {
-    _bulk->appendCmd(newCmd);
-}
-
-void Bulker::doWork()
-{
-    if (!_bulk->isEmpty())
-    {
-        _bulk->printCommands();
-        _bulk->logCommands();
-        _bulk->clear();
-    }
+    bulk.printCommands();
+    bulk.logCommands();
+    bulk.clear();
 }

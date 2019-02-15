@@ -3,11 +3,11 @@
 #include <list>
 #include <string>
 #include <ctime>
+#include <memory>
 
 
 /*!
- * \brief The ImpBulk class
- * Интерфейс для бульков
+ * \brief ImpBulk интерфейс для бульков
  */
 class ImpBulk
 {
@@ -22,56 +22,52 @@ public:
      * \brief appendCmd Добаляет команду и сбрасывает таймер, если команда первая
      * \param newCmd Новая команда
      */
-    virtual void appendCmd(std::string newCmd);
+    virtual void appendCmd(const std::string &newCmd);
 
     /*!
      * \brief clear Очищает список команд
      */
-    virtual void clear(void);
+    virtual void clear();
 
     /*!
      * \brief logCommands Записывает бульку в файл
      */
-    virtual void logCommands(void)   = 0;
+    virtual void logCommands() const = 0;
 
     /*!
      * \brief printCommands Выводит бульку на экран
      */
-    virtual void printCommands(void) = 0;
+    virtual void printCommands() const = 0;
 
     /*!
-     * \brief clone Создаёт новый класс потомка
-     * \return  указатель на новый экземпляр
+     * \brief isEmpty Проверяет есть ли команды в бульке
+     * \return
      */
-    virtual ImpBulk *clone(void)     = 0;
+    virtual bool isEmpty() const {return _commands.empty();}
 
-    virtual size_t isEmpty(void){return _commands.empty();}
 };
 
 /*!
- * \brief The Bulk class
- * Реализация бульки
+ * \brief Bulk класс реализации бульки
  */
 class Bulk : public ImpBulk
 {
 public:
-    void logCommands(void) override;
-    void printCommands(void) override;
-    ImpBulk *clone(void) override;
+    void logCommands() const override;
+    void printCommands() const override;
 };
 
 /*!
- * \brief The Bulker
- * класс для работы с бульками
+ * \brief ImpWorker интерфейс для выполнения работы.
  */
-class Bulker
+struct ImpWorker
 {
-    ImpBulk *_bulk;
+    virtual void operator ()(ImpBulk &bulk) = 0;
+};
 
-public:
-    Bulker(ImpBulk *bulk);
-    void appendCmd(std::string &newCmd);
-    void doWork(void);
+struct Worker : public ImpWorker
+{
+    void operator ()(ImpBulk &bulk) override;
 };
 
 /*!
@@ -80,12 +76,13 @@ public:
  */
 class BulkController
 {
-    Bulker _bulker;
-    size_t _commandsCount;
-    size_t _currentNumber;
+    ImpBulk    &_bulk;
+    ImpWorker  &_worker;
+    size_t      _commandsCount;
+    size_t      _currentNumber;
+    size_t      _stackSize;
     std::string _signShiftUp;
     std::string _signShiftDown;
-    size_t _stackSize;
 
 public:
     /*!
@@ -93,13 +90,13 @@ public:
      * \param bulk указатель на бульку
      * \param commandsCount колличество команд в бульке
      */
-    BulkController(ImpBulk *bulk, int commandsCount);
+    BulkController(int commandsCount, ImpBulk &bulk, ImpWorker &worker);
 
     /*!
      * \brief addString добавляет строку, если булька заполнена, выполняет соответствующие действия
      * \param str новая строка
      */
-    void addString(std::string &str);
+    void addString(const std::string &str);
 
     /*!
     * \brief flush выводит и очищает буффер
